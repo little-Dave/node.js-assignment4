@@ -12,7 +12,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get("/", (request, response, next) => {
-  response.render("form");
+  response.render("add-user");
 })
 
 app.post("/", (request, response, next) => {
