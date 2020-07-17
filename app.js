@@ -3,25 +3,17 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const express = require('express');
 
-const app = express();
+const addUser = require('./routes/add-user');
+const users = require('./routes/users');
 
-const users = [];
+const app = express();
 
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.get("/", (request, response, next) => {
-  response.render("add-user");
-})
+app.use(addUser.routes);
 
-app.post("/", (request, response, next) => {
-  users.push(request.body.name);
-  response.redirect("/");
-})
-
-app.get("/users", (request, response, next) => {
-  response.send(users.join(", "));
-})
+app.use(users);
 
 app.listen(3000 || process.env.PORT);
