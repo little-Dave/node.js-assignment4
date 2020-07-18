@@ -5,7 +5,9 @@ const router = express.Router();
 const users = [];
 
 router.get("/", (request, response, next) => {
-  response.render("add-user");
+  response.render("add-user", {
+    docTitle: "Add User"
+  });
 })
 
 router.post("/", (request, response, next) => {

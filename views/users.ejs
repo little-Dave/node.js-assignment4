@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title><%= docTitle %></title>
 </head>
 <body>
   <h2>All registered users:</h2>
@@ -12,5 +12,6 @@
       <li><%= user.name %></li>
     <% }) %>
   </ul>
+  <a href="/">Add another user</a>
 </body>
 </html>
