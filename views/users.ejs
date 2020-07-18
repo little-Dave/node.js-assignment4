@@ -6,7 +6,8 @@
   <title><%= docTitle %></title>
 </head>
 <body>
-  <h2>All registered users:</h2>
+  <%- include('../layouts/header') %>
+  <h3>Registered users</h3>
   <ul>
     <% allUsers.map(user => { %>
       <li><%= user.name %></li>

@@ -6,13 +6,15 @@
   <title><%= docTitle %></title>
 </head>
 <body>
+  <%- include('../layouts/header') %>
+  <h3>Add new user</h3>
   <div class="form-container">
     <form method="POST" action="/">
-      <label for="name">Please enter your first name in the field below</label>
+      <label for="name">Please enter your first name in the field below</label><br>
       <input type="text" name="name">
       <button type="submit">Submit</button>
     </form>
-  </div>
+  </div><br>
   <a href="/users">List of users</a>
 </body>
 </html>
